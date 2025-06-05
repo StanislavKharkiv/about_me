@@ -4,13 +4,14 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prepare": "husky install",
+    "prepare": "husky",
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
     "lint:fix": "next lint --fix",
     "format": "prettier --check .",
-    "format:fix": "prettier --write ."
+    "format:fix": "prettier --write .",
+    "el": "eslint"
   },
   "dependencies": {
     "next": "15.3.3",
@@ -38,12 +39,6 @@
     "typescript-eslint": "^8.33.1"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "next lint --fix",
-      "prettier --write"
-    ],
-    "*.{json,css,md}": [
-      "prettier --write"
-    ]
+    "src/**/*.{js,jsx,ts,tsx}": ["prettier --write", "eslint"]
   }
 }

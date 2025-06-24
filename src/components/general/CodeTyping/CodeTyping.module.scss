@@ -1,0 +1,55 @@
+@use "@/styles/global.scss" as *;
+
+.container {
+    margin: 0;
+    padding: 0;
+    padding: 2rem;
+    margin: auto;
+    color: #64a5d6;
+    user-select: none;
+    pointer-events: none;
+    overflow: hidden;
+    font-size: 2rem;
+
+    @include respond(lg) {
+        font-size: 1.6rem;
+        padding: 1.6rem;
+    }
+
+    @include respond(md) {
+        font-size: 1.2rem;
+        padding: 1rem;
+    }
+
+    & pre {
+        width: 100%;
+    }
+}
+
+.line {
+    min-height: 1.6rem;
+
+    @include respond(lg) {
+        min-height: 1rem;
+    }
+}
+
+// styles for color html tags
+.brackets {
+    color: #a1a1a1;
+
+    @media (prefers-color-scheme: dark) {
+        color: #ffffff;
+    }
+}
+
+// .attribute {
+//     color: rgb(8, 114, 251);
+// }
+
+// .tagName {
+//     color: #63d063;
+// }
+// .innerText {
+//     color: #ffffff;
+// }

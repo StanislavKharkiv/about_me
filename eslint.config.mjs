@@ -16,7 +16,13 @@ const eslintConfig = [
     ignores: ["node_modules", ".next"],
   },
   ...compat.config({
-    extends: ["next/core-web-vitals", "next/typescript", "prettier"],
+    extends: [
+      "next/core-web-vitals",
+      "next/typescript",
+      "prettier",
+      "plugin:testing-library/react",
+      "plugin:jest-dom/recommended",
+    ],
     rules: {
       "max-len": ["error", { code: 120 }],
       "semi": ["error", "never"],
@@ -43,12 +49,8 @@ const eslintConfig = [
         "error",
         { blankLine: "always", prev: "import", next: "*" },
         { blankLine: "any", prev: "import", next: "import" },
-        { blankLine: "always", prev: "*", next: "function" },
         { blankLine: "always", prev: "*", next: "export" },
-        { blankLine: "always", prev: "*", next: "class" },
-        { blankLine: "always", prev: "*", next: "const" },
-        { blankLine: "always", prev: "*", next: "let" },
-        { blankLine: "always", prev: "*", next: "var" },
+        { blankLine: "always", prev: ["const", "let", "var"], next: "export" },
       ],
     },
   }),

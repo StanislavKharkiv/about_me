@@ -1,12 +1,14 @@
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --wite: #ffffff;
+  --background: var(--wite);
+  --foreground: #1b1b1b;
+  --accent: #f49b01;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: #212121;
+    --foreground: var(--wite);
   }
 }
 
@@ -16,12 +18,17 @@ body {
   overflow-x: hidden;
 }
 
+html {
+  font-size: 10px;
+}
+
 body {
   color: var(--foreground);
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-size: 1.6rem;
 }
 
 * {

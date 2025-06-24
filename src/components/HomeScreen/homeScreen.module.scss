@@ -1,17 +1,9 @@
 .container {
   position: relative;
   height: 100vh;
-  background-color: #0d0d0d;
-  color: #00ff00;
-  font-family: "Courier New", Courier, monospace;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  padding: 2rem;
 }
 
-.codeBackground {
+.codeStyles {
   position: absolute;
   top: 0;
   left: 0;
@@ -20,36 +12,27 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: auto;
-  user-select: none;
-  pointer-events: none;
-  font-size: 1.4rem;
-  line-height: 1.4;
-  white-space: pre;
-  z-index: 1;
-
-  @media screen and (max-width: 1200px) {
-    font-size: 1.2rem;
-    line-height: 1.2;
-  }
-  & > pre {
-    margin: 0;
-    padding: 0;
-    width: 90%;
-  }
+  max-width: 800px;
+  text-shadow: 0 1px 1px #222222;
 }
 
-.line {
-  min-height: 22px;
-}
-
-.text {
-  white-space: pre-wrap;
+.background {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
 }
 
 .mainHeader {
+  margin: auto;
   position: relative;
-  font-size: 3rem;
-  color: white;
+  box-shadow: 0 1px 8px #707070;
+  padding: 40px;
+  background: rgba(#ffffff, 0.8);
   z-index: 10;
+  border-radius: 5px;
+
+  @media (prefers-color-scheme: dark) {
+        background: rgba(#222222, 0.8);
+    }
 }

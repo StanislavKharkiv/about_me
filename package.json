@@ -7,8 +7,10 @@
     "prepare": "husky",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "lint:fix": "next lint --fix",
+    "lint:scss": "stylelint 'src/**/*.{scss,css}'",
+    "lint:scss:fix": "stylelint 'src/**/*.{scss,css}' --fix",
+    "lint": "next lint && npm run lint:scss",
+    "lint:fix": "next lint --fix && npm run lint:scss:fix",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "el": "eslint",
@@ -55,6 +57,10 @@
     "lint-staged": "^16.1.0",
     "prettier": "^3.5.3",
     "sass": "^1.89.1",
+    "stylelint": "^16.21.1",
+    "stylelint-config-standard": "^38.0.0",
+    "stylelint-config-standard-scss": "^15.0.1",
+    "stylelint-scss": "^6.12.1",
     "ts-jest": "^29.4.0",
     "ts-node": "^10.9.2",
     "typescript": "^5",
@@ -64,6 +70,7 @@
     "src/**/*.{js,jsx,ts,tsx}": [
       "prettier --write",
       "eslint"
-    ]
+    ],
+    "src/**/*.{css,scss}": "stylelint 'src/**/*.{scss,css}'"
   }
 }

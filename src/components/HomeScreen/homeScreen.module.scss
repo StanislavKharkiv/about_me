@@ -1,12 +1,18 @@
 @use "@/styles/constants.scss" as *;
 
-$headerColor: var(--white);
-$headerTextShadow: 1px 1px #aaa, 2px 2px #999, 3px 3px #888, 4px 4px #777, 5px 5px #666;
+$header-color: var(--white);
+$header-text-shadow:
+  1px 1px #aaaaaa,
+  2px 2px #999999,
+  3px 3px #888888,
+  4px 4px #777777,
+  5px 5px #666666;
 
 .container {
   position: relative;
   height: 100vh;
-  // background: url('../../../public/home-bg.jpg') no-repeat center / cover fixed; add bg image
+
+  // background: url('../../../public/home-bg.jpg') no-repeat center / cover fixed;backgroundbackground add bg image
 }
 
 .codeStyles {
@@ -18,7 +24,7 @@ $headerTextShadow: 1px 1px #aaa, 2px 2px #999, 3px 3px #888, 4px 4px #777, 5px 5
   max-width: 900px;
   transform: translate(-50%, -50%);
   opacity: 0.9;
-  box-shadow: 0px 2px 14px -1px var(--foreground);
+  box-shadow: 0 2px 14px -1px var(--foreground);
 }
 
 .background {
@@ -38,10 +44,8 @@ $headerTextShadow: 1px 1px #aaa, 2px 2px #999, 3px 3px #888, 4px 4px #777, 5px 5
   gap: 1rem;
   margin: auto;
   font-size: 8rem;
-  color: $headerColor;
-  // text-shadow: 0 3px $headerColor;
-
-  text-shadow: $headerTextShadow;
+  color: $header-color;
+  text-shadow: $header-text-shadow;
   text-transform: uppercase;
 
   @include respond(lg) {
@@ -53,15 +57,11 @@ $headerTextShadow: 1px 1px #aaa, 2px 2px #999, 3px 3px #888, 4px 4px #777, 5px 5
       height: 6px;
     }
   }
-
-  // @media (prefers-color-scheme: dark) {
-  //   text-shadow: 0 3px var(--accent);
-  // }
 }
 
 .verticalLine {
   display: block;
   width: 6px;
-  background: $headerColor;
-  box-shadow: $headerTextShadow;
+  background: $header-color;
+  box-shadow: $header-text-shadow;
 }

@@ -1,0 +1,26 @@
+.redactor {
+  background: #232323;
+  border-radius: 4px;
+}
+
+.header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  border-bottom: 1px solid #bbbbbb;
+  padding: 4px;
+}
+
+.headerButton {
+  color: var(--white);
+  margin: 0 5px;
+}
+
+.buttonWrapper {
+  display: flex;
+  align-items: center;
+
+  & span:last-child {
+    font-size: 14px;
+  }
+}

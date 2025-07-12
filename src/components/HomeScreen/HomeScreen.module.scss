@@ -1,0 +1,67 @@
+@use "@/styles/constants.scss" as *;
+
+$header-color: var(--white);
+$header-text-shadow:
+  1px 1px #aaaaaa,
+  2px 2px #999999,
+  3px 3px #888888,
+  4px 4px #777777,
+  5px 5px #666666;
+
+.container {
+  position: relative;
+  height: 100vh;
+
+  // background: url('../../../public/home-bg.jpg') no-repeat center / cover fixed;backgroundbackground add bg image
+}
+
+.codeStyles {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 90%;
+  height: 70%;
+  max-width: 900px;
+  transform: translate(-50%, -50%);
+  opacity: 0.9;
+  box-shadow: 0 2px 14px -1px var(--foreground);
+}
+
+.background {
+  display: flex;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(#ffffff, 0.6);
+
+  @media (prefers-color-scheme: dark) {
+    background: rgba(#222222, 0.6);
+  }
+}
+
+.mainHeader {
+  display: flex;
+  gap: 1rem;
+  margin: auto;
+  font-size: 8rem;
+  color: $header-color;
+  text-shadow: $header-text-shadow;
+  text-transform: uppercase;
+
+  @include respond(lg) {
+    flex-direction: column;
+    align-items: center;
+
+    & .verticalLine {
+      width: 100%;
+      height: 6px;
+    }
+  }
+}
+
+.verticalLine {
+  display: block;
+  width: 6px;
+  background: $header-color;
+  box-shadow: $header-text-shadow;
+}

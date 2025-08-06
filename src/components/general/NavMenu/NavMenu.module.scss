@@ -1,0 +1,53 @@
+.menu {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 10px 14px;
+  background-color: rgba($color: #000000, $alpha: 20%);
+  border-radius: 6px;
+  box-shadow: #4e4d4d 0 2px 8px 0;
+  transition: opacity 0.3s;
+}
+
+.menuList {
+  display: flex;
+  gap: 14px;
+}
+
+.menuListItem {
+  transition: 0.4s ease-in-out;
+  overflow: hidden;
+  border: 1px solid var(--accent);
+  background: var(--white);
+  border-radius: 50%;
+  box-shadow: #797979 0 2px 6px 0;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: inset #999999 0 1px 6px 0;
+
+    & svg {
+      fill: var(--black);
+    }
+  }
+
+  & > a {
+    display: flex;
+    padding: 8px;
+    width: 100%;
+    gap: 10px;
+    align-items: center;
+  }
+}
+
+.menuText {
+  white-space: nowrap;
+}
+
+.menuIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

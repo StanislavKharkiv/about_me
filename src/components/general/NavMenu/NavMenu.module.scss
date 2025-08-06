@@ -18,12 +18,12 @@
 
 .menuListItem {
   transition: 0.4s ease-in-out;
-  interpolate-size: allow-keywords;
   overflow: hidden;
   border: 1px solid var(--accent);
   background: var(--white);
   border-radius: 50%;
   box-shadow: #797979 0 2px 6px 0;
+  cursor: pointer;
 
   &:hover {
     box-shadow: inset #999999 0 1px 6px 0;

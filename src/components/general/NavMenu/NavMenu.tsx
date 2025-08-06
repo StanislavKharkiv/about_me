@@ -16,16 +16,18 @@ const MENU_ITEMS = [
 
 export default function NavMenu() {
   const pathname = usePathname()
-  const [isLoading, setIsLoading] = useState(true) // TODO: put in state manager and sow loading all page
+  const [isReady, setIsReady] = useState(true) // TODO: add animation for show menu
+
+  const handleReadyToRender = () => setIsReady(false)
 
   return (
     <nav
       className={styles.menu}
-      style={isLoading ? { visibility: "hidden", opacity: 0 } : { visibility: "visible", opacity: 1 }}
+      style={isReady ? { visibility: "hidden", opacity: 0 } : { visibility: "visible", opacity: 1 }}
     >
       <ul className={styles.menuList}>
-        {MENU_ITEMS.map(({ href, icon: Icon, text }) => (
-          <MenuItem key={text} isLoading={isLoading} setIsLoading={setIsLoading}>
+        {MENU_ITEMS.map(({ href, icon: Icon, text }, i) => (
+          <MenuItem key={text} onReadyToRender={i === 0 ? handleReadyToRender : undefined}>
             <Link href={href}>
               <span className={styles.menuIconWrap}>
                 <Icon color={pathname === href ? "darkorange" : "gray"} className={styles.icon} />
@@ -43,11 +45,10 @@ const DEFAULT_WIDTH = 48
 
 interface MenuItemProps {
   children: ReactNode
-  isLoading: boolean
-  setIsLoading: (loading: boolean) => void
+  onReadyToRender?: () => void
 }
 
-function MenuItem({ children, isLoading, setIsLoading }: MenuItemProps) {
+function MenuItem({ children, onReadyToRender }: MenuItemProps) {
   const itemRef = useRef<HTMLLIElement>(null)
   const [width, setWidth] = useState<number | string>("auto")
   const [offsetWidth, setOffsetWidth] = useState(DEFAULT_WIDTH)
@@ -58,6 +59,8 @@ function MenuItem({ children, isLoading, setIsLoading }: MenuItemProps) {
       setOffsetWidth(itemRef.current.offsetWidth)
       setWidth(DEFAULT_WIDTH)
     }
+    onReadyToRender?.()
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   return (
@@ -67,9 +70,6 @@ function MenuItem({ children, isLoading, setIsLoading }: MenuItemProps) {
       style={isHovered ? { width: offsetWidth, borderRadius: 8 } : { width }}
       ref={itemRef}
       className={styles.menuListItem}
-      onTransitionEnd={() => {
-        if (isLoading) setIsLoading(false)
-      }}
     >
       {children}
     </li>

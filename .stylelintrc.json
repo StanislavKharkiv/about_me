@@ -2,6 +2,7 @@
   "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
   "rules": {
     "selector-class-pattern": null,
-    "color-hex-length": "long"
+    "color-hex-length": "long",
+    "scss/at-extend-no-missing-placeholder": null
   }
 }

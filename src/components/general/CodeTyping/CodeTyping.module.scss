@@ -8,17 +8,6 @@
   user-select: none;
   pointer-events: none;
   overflow: hidden;
-  font-size: 2rem;
-
-  @include respond(lg) {
-    font-size: 1.6rem;
-    padding: 1.6rem;
-  }
-
-  @include respond(md) {
-    font-size: 1.2rem;
-    padding: 1rem;
-  }
 
   & pre {
     width: 100%;

@@ -1,5 +1,5 @@
 .menu {
-  position: absolute;
+  position: fixed;
   bottom: 14px;
   left: 50%;
   transform: translateX(-50%);
@@ -7,7 +7,7 @@
   padding: 10px 14px;
   background-color: rgba($color: #000000, $alpha: 20%);
   border-radius: 6px;
-  box-shadow: #4e4d4d 0 2px 8px 0;
+  box-shadow: #414141 0 2px 8px 0;
   transition: opacity 0.3s;
 }
 
@@ -20,13 +20,16 @@
   transition: 0.4s ease-in-out;
   overflow: hidden;
   border: 1px solid var(--accent);
-  background: var(--white);
+  background: #ededed;
+  color: var(--black);
   border-radius: 50%;
-  box-shadow: #797979 0 2px 6px 0;
+  box-shadow: #2a2a2a 0 4px 10px 0;
   cursor: pointer;
 
   &:hover {
-    box-shadow: inset #999999 0 1px 6px 0;
+    box-shadow:
+      #414141 0 0 2px 0,
+      inset #999999 0 1px 6px 0;
 
     & svg {
       fill: var(--black);
@@ -40,6 +43,14 @@
     gap: 10px;
     align-items: center;
   }
+}
+
+.icon {
+  fill: #5b5b5b;
+}
+
+.activeIcon {
+  fill: var(--accent);
 }
 
 .menuText {

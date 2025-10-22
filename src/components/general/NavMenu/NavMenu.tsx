@@ -30,7 +30,7 @@ export default function NavMenu() {
           <MenuItem key={text} onReadyToRender={i === 0 ? handleReadyToRender : undefined}>
             <Link href={href}>
               <span className={styles.menuIconWrap}>
-                <Icon color={pathname === href ? "darkorange" : "gray"} className={styles.icon} />
+                <Icon className={pathname === href ? styles.activeIcon : styles.icon} />
               </span>
               <span className={styles.menuText}>{text}</span>
             </Link>

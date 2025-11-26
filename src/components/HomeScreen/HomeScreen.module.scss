@@ -87,9 +87,10 @@ $header-text-shadow:
   padding: 2rem;
   border-radius: 5px;
 
-  @media (prefers-color-scheme: dark) {
-    background: rgba(#222222, 0.6);
-  }
+  // TODO: add dark mode later
+  // @media (prefers-color-scheme: dark) {
+  //   background: rgba(#222222, 0.6);
+  // }
 
   @include respond(lg) {
     padding: 0;

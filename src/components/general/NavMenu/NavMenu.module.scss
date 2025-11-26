@@ -16,6 +16,13 @@
   gap: 14px;
 }
 
+.menuIconWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #505050;
+}
+
 .menuListItem {
   transition: 0.4s ease-in-out;
   overflow: hidden;
@@ -31,34 +38,22 @@
       #414141 0 0 2px 0,
       inset #999999 0 1px 6px 0;
 
-    & svg {
-      fill: var(--black);
+    .menuIconWrap {
+      color: var(--black);
     }
   }
 
   & > a {
     display: flex;
-    padding: 8px;
     width: 100%;
-    gap: 10px;
     align-items: center;
   }
 }
 
-.icon {
-  fill: #5b5b5b;
-}
-
 .activeIcon {
-  fill: var(--accent);
+  color: var(--accent);
 }
 
 .menuText {
   white-space: nowrap;
-}
-
-.menuIconWrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }

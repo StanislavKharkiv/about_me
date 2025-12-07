@@ -7,6 +7,7 @@ import { useRef } from "react"
 
 import CodeRedactor from "../general/CodeRedactor"
 import CodeTyping from "../general/CodeTyping"
+import NeonLights from "../general/NeonLights"
 
 import { codeLines } from "./constants"
 import styles from "./HomeScreen.module.scss"
@@ -42,8 +43,15 @@ export default function HomeScreen() {
       .to(technologies.current, { text: defaultTextTechnologies, ...tl2Settings }, "+=4")
   })
 
+  const lines = [
+    { coordPaths: "M 0 280 Q 400 80 800 280 T 1400 260", color: "#1f51ff" },
+    { coordPaths: "M 0 520 Q 500 720 900 480 T 1400 600", color: "#22d3ee" },
+    { coordPaths: "M 0 500 Q 600 320 850 580 T 1400 350", color: "#abd0e1" },
+  ]
+
   return (
     <div className={styles.container}>
+      <NeonLights linesData={lines} />
       <CodeRedactor className={styles.codeStyles}>
         <CodeTyping codeLines={codeLines} />
       </CodeRedactor>

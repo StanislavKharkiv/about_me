@@ -16,24 +16,8 @@ $header-text-shadow:
   gap: 2rem;
   position: relative;
   min-height: 100vh;
-  background: linear-gradient(270deg, var(--accent), var(--foreground));
-  background-size: 400% 400%;
-  animation: gradient-shift 12s ease infinite;
+  background: linear-gradient(to bottom, #141822 40%, #2e3d64);
   perspective: 1500px;
-}
-
-@keyframes gradient-shift {
-  0% {
-    background-position: 0% 50%;
-  }
-
-  50% {
-    background-position: 100% 50%;
-  }
-
-  100% {
-    background-position: 0% 50%;
-  }
 }
 
 .blocksSize {
@@ -86,11 +70,6 @@ $header-text-shadow:
   flex-grow: 1;
   padding: 2rem;
   border-radius: 5px;
-
-  // TODO: add dark mode later
-  // @media (prefers-color-scheme: dark) {
-  //   background: rgba(#222222, 0.6);
-  // }
 
   @include respond(lg) {
     padding: 0;

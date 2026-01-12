@@ -10,7 +10,7 @@ describe("NeonLights component", () => {
     { coordPaths: "M0 50 L100 50", color: "#00ff00" },
   ]
 
-  test("renders SVG and group", async () => {
+  test("renders SVG and group", () => {
     render(<NeonLights linesData={linesData} />)
     const svg = screen.getByTestId("neon-svg")
     const group = screen.getByTestId("neon-group")

@@ -72,10 +72,6 @@ $header-text-shadow:
   border-radius: 5px;
   z-index: 5;
 
-  &:first-child {
-    align-self: start;
-  }
-
   @include respond(lg) {
     padding: 0;
   }
@@ -101,10 +97,10 @@ $header-text-shadow:
 }
 
 .title {
+  $font-size: 2rem;
+  
   width: 100%;
   animation: show 3s;
-
-  $font-size: 2rem;
 
   svg {
     width: 100%;

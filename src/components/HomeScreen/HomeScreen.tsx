@@ -1,7 +1,6 @@
 "use client"
 
 import { useGSAP } from "@gsap/react"
-import cslx from "clsx"
 import gsap from "gsap"
 import { useRef } from "react"
 
@@ -16,7 +15,6 @@ const defaultTextTechnologies = "IT technologies"
 
 export default function HomeScreen() {
   const header = useRef<HTMLHeadingElement>(null)
-  const subHeader = useRef<HTMLHeadingElement>(null)
   const technologies = useRef<HTMLDivElement>(null)
 
   useGSAP(() => {
@@ -26,9 +24,8 @@ export default function HomeScreen() {
     const firstPart = header.current.firstChild
     const lastPart = header.current.lastChild
 
-    tl.fromTo(firstPart, { y: "-500%", opacity: -1 }, { y: "0%", opacity: 1, duration: 2, ease: "power3.out" })
-    tl.fromTo(lastPart, { y: "500%", opacity: -1 }, { y: "0%", opacity: 1, duration: 2, ease: "power3.out" }, "<")
-    tl.fromTo(subHeader.current, { opacity: 0 }, { opacity: 1, duration: 2 })
+    tl.fromTo(firstPart, { y: "-100%", opacity: -1 }, { y: "0%", opacity: 1, duration: 1, ease: "power3.out" })
+    tl.fromTo(lastPart, { y: "100%", opacity: -1 }, { y: "0%", opacity: 1, duration: 1, ease: "power3.out" }, "<")
 
     if (!technologies.current) return
     const tl2 = gsap.timeline({ repeat: -1, delay: 4, repeatRefresh: true })
@@ -56,12 +53,18 @@ export default function HomeScreen() {
         <CodeTyping codeLines={codeLines} />
       </CodeRedactor>
       <section className={styles.textBlock}>
-        <h1 className={cslx(styles.mainHeader, styles.headers)} ref={header}>
+        <p className={styles.slogan}>Turning ideas into interactive web products.</p>
+        <h1 className={styles.mainHeader} ref={header}>
           <span>Web</span> <span className={styles.verticalLine} /> <span>Development</span>
         </h1>
-        <h2 className={cslx(styles.headers, styles.title)} ref={subHeader}>
-          By Stanislav Iosyfov
+        <h2 className={styles.title}>
+          <svg>
+            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle">
+              By Stanislav Iosyfov
+            </text>
+          </svg>
         </h2>
+        <div className={styles.horizontalLine} />
         <div className={styles.technologies} ref={technologies}>
           {defaultTextTechnologies}
         </div>

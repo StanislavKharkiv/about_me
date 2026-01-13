@@ -1,19 +1,15 @@
 @use "@/styles/constants.scss" as *;
 
-$header-color: var(--white);
 $header-text-shadow:
   1px 1px #aaaaaa,
   2px 2px #999999,
-  3px 3px #888888,
-  4px 4px #777777,
-  5px 5px #666666;
+  3px 3px #888888;
 
 .container {
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   padding: 0 4rem;
-  gap: 2rem;
   position: relative;
   min-height: 100vh;
   background: linear-gradient(to bottom, #141822 40%, #2e3d64);
@@ -22,7 +18,7 @@ $header-text-shadow:
 
 .blocksSize {
   height: 50%;
-  min-height: 500px;
+  min-height: 400px;
 }
 
 .codeStyles {
@@ -30,21 +26,25 @@ $header-text-shadow:
 
   width: clamp(500px, 30%, 700px);
   transform-style: preserve-3d;
-  transform: rotateY(50deg) translateX(20px);
+  transform: rotateY(45deg) translateX(20px);
   transform-origin: left;
-  opacity: 0.7;
-  box-shadow: -4px 1px 8px 1px #000000;
+  opacity: 0.6;
+  box-shadow:
+    -8px 0 0 0 #151515,
+    -8px 6px 16px var(--accent);
   transition: 0.3s ease-in-out;
   font-size: 1.2rem;
 
   &:hover {
-    transform: rotateY(0deg) translateX(-2px);
-    box-shadow: 0 1px 8px 1px #000000;
+    transform: rotateY(25deg) translateX(-2px);
+    box-shadow:
+      -4px 0 0 0 #151515,
+      -4px 4px 12px #999999;
     opacity: 0.9;
   }
 
   @include respond(lg) {
-    transform: none;
+    transform: none !important;
     position: absolute;
     top: 0;
     left: 0;
@@ -70,20 +70,18 @@ $header-text-shadow:
   flex-grow: 1;
   padding: 2rem;
   border-radius: 5px;
+  z-index: 5;
 
   @include respond(lg) {
     padding: 0;
   }
 }
 
-.headers {
-  color: $header-color;
-}
-
 .mainHeader {
   display: flex;
   gap: 1rem;
   font-size: 4.5rem;
+  color: var(--white);
   text-transform: uppercase;
   text-shadow: $header-text-shadow;
 
@@ -99,20 +97,67 @@ $header-text-shadow:
 }
 
 .title {
-  text-shadow: 0 1px var(--black);
+  $font-size: 2rem;
+  
+  width: 100%;
+  animation: show 3s;
+
+  svg {
+    width: 100%;
+    height: $font-size;
+  }
+
+  text {
+    font-size: $font-size;
+    fill: #273041;
+    stroke: #d2e4fc;
+    stroke-width: 0.5px;
+    stroke-linejoin: round;
+    paint-order: stroke fill;
+  }
+}
+
+.slogan {
+  color: #579ebd;
+  font-size: 1.6rem;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 4rem;
+  animation: show 5s;
+}
+
+.horizontalLine {
+  width: min(60%, 140px);
+  margin: 1rem auto;
+  height: 1px;
+  background: rgba($color: #ffffff, $alpha: 30%);
+  animation: show 8s;
 }
 
 .verticalLine {
   display: block;
   width: 6px;
-  background: $header-color;
+  background: var(--white);
   box-shadow: $header-text-shadow;
 }
 
 .technologies {
   color: var(--accent);
-  padding-top: 2rem;
   font-weight: bold;
   opacity: 0;
   text-shadow: 0 1px 1px var(--black);
+}
+
+@keyframes show {
+  0% {
+    opacity: 0;
+  }
+
+  40% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }

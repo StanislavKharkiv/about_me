@@ -1,5 +1,5 @@
 import type { Metadata } from "next"
-import { Geist, Geist_Mono } from "next/font/google"
+import { Geist, PT_Sans_Caption } from "next/font/google"
 
 import "@/styles/global.scss"
 import NavMenu from "@/components/general/NavMenu"
@@ -9,8 +9,9 @@ const geistSans = Geist({
   subsets: ["latin"],
 })
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ptSansCaption = PT_Sans_Caption({
+  weight: "400",
+  variable: "--font-pt-sans-caption",
   subsets: ["latin"],
 })
 
@@ -26,7 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${geistSans.variable} ${geistMono.variable}`}>
+      <body className={`${geistSans.variable} ${ptSansCaption.variable}`}>
         <NavMenu />
         {children}
       </body>

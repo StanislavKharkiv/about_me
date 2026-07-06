@@ -15,6 +15,7 @@ const config: Config = {
   moduleNameMapper: {
     "^gsap$": "<rootDir>/__mocks__/gsap.js",
     "^gsap/TextPlugin$": "<rootDir>/__mocks__/gsap/TextPlugin.js",
+    "^@/(.*)$": "<rootDir>/src/$1",
   },
   // Add more setup options before each test is run
   setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],

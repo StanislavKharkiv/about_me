@@ -1,0 +1,110 @@
+@use "@/styles/constants.scss" as *;
+
+.container {
+  padding: 4rem;
+  padding-bottom: 10rem;
+  min-height: 100vh;
+  background: linear-gradient(to right, #171c29 30%, #305774);
+  color: var(--white);
+
+  @include respond(sm) {
+    padding: 2rem;
+    padding-bottom: 10rem;
+
+    .imageContainer {
+      width: 280px;
+    }
+  }
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 4rem;
+  font-weight: lighter;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: space-evenly;
+  gap: 4rem;
+
+  @include respond(lg) {
+    flex-direction: column;
+
+    .accordion {
+      margin: auto;
+    }
+  }
+}
+
+.summary {
+  max-width: 600px;
+  margin: auto;
+  color: #a7d4eb;
+  text-shadow: 0 2px 1px var(--black);
+}
+
+.accordion {
+  max-width: 600px;
+}
+
+.accordionTitleWrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+
+  & > span:last-child {
+    font-size: 1.4rem;
+  }
+}
+
+.accordionCompany {
+  font-size: 1.4rem;
+  color: #7eadc4;
+}
+
+.accordionList {
+  padding-left: 16px;
+}
+
+.accordionListItem {
+  padding: 10px 0;
+  list-style: square;
+}
+
+.imageContainer {
+  position: relative;
+  width: 100%;
+  width: 350px;
+  aspect-ratio: 1 / 1;
+  margin: 0 auto;
+  animation: float 9s ease-in-out infinite;
+}
+
+.cyberImage {
+  opacity: 0.8;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgb(0 163 255 / 40%));
+  transition: filter 0.3s ease;
+
+  &:hover {
+    filter: drop-shadow(0 0 35px rgb(0 163 255 / 70%));
+    opacity: 1;
+    transform: opacity 0.3s ease;
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

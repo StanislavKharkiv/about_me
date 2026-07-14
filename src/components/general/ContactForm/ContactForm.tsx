@@ -1,12 +1,14 @@
 "use client"
 
 import { useGSAP } from "@gsap/react"
+import clsx from "clsx"
 import gsap from "gsap"
+import { Send } from "lucide-react"
 import { useState, useRef } from "react"
 
 import styles from "./ContactForm.module.scss"
 
-export default function ContactScreen() {
+export default function ContactScreen({ className = "" }: { className?: string }) {
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState<string>("")
 
@@ -17,7 +19,7 @@ export default function ContactScreen() {
     () => {
       const tl = gsap.timeline({ defaults: { ease: "power3.out" } })
 
-      tl.from(`.${styles.header}`, { y: -30, opacity: 0, duration: 0.8 })
+      tl.from(`.${styles.header}`, { y: -30, opacity: 0, duration: 0.8, delay: 1 })
         .from(`.${styles.statusBadge}`, { scale: 0.8, opacity: 0, duration: 0.5 }, "-=0.4")
         .from(`.${styles.inputWrapper}`, { y: 20, opacity: 0, stagger: 0.15, duration: 0.6 }, "-=0.3")
         .from(`.${styles.submitBtn}`, { y: 15, opacity: 0, duration: 1 }, "-=0.2")
@@ -72,7 +74,7 @@ export default function ContactScreen() {
     }
   }
   return (
-    <div ref={containerRef} className={styles.container}>
+    <div ref={containerRef} className={clsx(styles.container, className)}>
       <main className={styles.wrapper}>
         <div className={styles.metaContainer}>
           <h1 className={styles.header}>Establish Connection</h1>
@@ -102,7 +104,7 @@ export default function ContactScreen() {
               maxLength={50}
             />
             <label htmlFor="name" className={styles.label}>
-              IDENT_NAME
+              NAME
             </label>
             <div className={styles.bar}></div>
           </div>
@@ -119,7 +121,7 @@ export default function ContactScreen() {
               maxLength={254}
             />
             <label htmlFor="email" className={styles.label}>
-              SECURE_EMAIL
+              CONTACT EMAIL
             </label>
             <div className={styles.bar}></div>
           </div>
@@ -136,7 +138,7 @@ export default function ContactScreen() {
               maxLength={3000}
             />
             <label htmlFor="message" className={styles.label}>
-              ENCRYPTED_MESSAGE
+              YOUR MESSAGE
             </label>
             <div className={styles.bar}></div>
           </div>
@@ -148,6 +150,7 @@ export default function ContactScreen() {
             className={styles.submitBtn}
           >
             <span className={styles.btnText}>{status === "loading" ? "TRANSMITTING..." : "SEND PACKET"}</span>
+            <Send strokeWidth={1.2} size={14} />
           </button>
 
           {status === "success" && (

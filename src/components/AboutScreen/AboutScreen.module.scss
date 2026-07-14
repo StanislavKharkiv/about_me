@@ -76,7 +76,7 @@
 .imageContainer {
   position: relative;
   width: 100%;
-  width: 350px;
+  max-width: 350px;
   aspect-ratio: 1 / 1;
   margin: 0 auto;
   animation: float 9s ease-in-out infinite;

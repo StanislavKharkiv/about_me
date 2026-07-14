@@ -71,7 +71,7 @@ export default function AboutScreen() {
               alt="Cyber Portrait"
               fill
               priority
-              sizes="(max-w-7xl) 350px, 100vw"
+              sizes="(max-width: 350px) 100vw, 350px"
               className={styles.cyberImage}
             />
           </div>

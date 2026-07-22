@@ -6,6 +6,6 @@ export const metadata: Metadata = {
   title: "Contact me",
 }
 
-export default function About() {
+export default function Contacts() {
   return <ContactScreen />
 }

@@ -11,7 +11,7 @@ const MENU_ITEMS = [
   { href: "/", icon: House, text: "Home" },
   { href: "/about", icon: Info, text: "About" },
   { href: "/contacts", icon: Contact, text: "Contacts" },
-  { href: "/works", icon: BriefcaseBusiness, text: "My works" },
+  { href: "/portfolio", icon: BriefcaseBusiness, text: "Portfolio" },
 ]
 
 const ICON_SIZE = 26

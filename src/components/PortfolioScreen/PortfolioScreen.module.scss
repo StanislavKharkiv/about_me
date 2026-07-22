@@ -1,0 +1,17 @@
+.container {
+  padding-bottom: 10rem;
+  padding-top: 1rem;
+  min-height: 100vh;
+  background: linear-gradient(to bottom, #2e98be 20%, #162341);
+  color: var(--white);
+}
+
+.header {
+  text-align: center;
+  font-weight: lighter;
+  font-size: 2.4rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid rgb(255 255 255 / 20%);
+  border-top: 1px solid rgb(255 255 255 / 20%);
+  box-shadow: 0 0 10px rgb(0 0 0 / 20%);
+}

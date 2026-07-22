@@ -4,41 +4,10 @@ import { useState } from "react"
 
 import Slider from "@/components/general/Slider"
 
-import styles from "./PortfolioScreen.module.scss"
+import ProjectDetails from "../general/ProjectDetails"
 
-const projects = [
-  {
-    id: 1,
-    image: "/images/geoap.png",
-    repo: "https://github.com/QuantuMobileSoftware/geoap",
-    name: "Geoap",
-  },
-  {
-    id: 2,
-    image: "/images/mine_free.png",
-    name: "Mine free",
-    link: "https://www.weareukraine.info/mine-safety-mobile-app-launched-in-ukraine/",
-  },
-  {
-    id: 3,
-    image: "/images/usa_cars.png",
-    repo: "https://github.com/StanislavKharkiv/usa-cars",
-    name: "American Cars",
-    link: "https://usa-car.netlify.app/",
-  },
-  {
-    id: 4,
-    image: "/images/chat_bot.png",
-    name: "Chatbot",
-    link: "https://mayabot.ai/",
-  },
-  {
-    id: 5,
-    image: "/images/quantumobile.png",
-    name: "Corporate website",
-    link: "https://quantumobile.com/",
-  },
-]
+import { projects } from "./constants"
+import styles from "./PortfolioScreen.module.scss"
 
 export default function PortfolioScreen() {
   const [currentCard, setCurrentCard] = useState<number>(2)
@@ -47,8 +16,15 @@ export default function PortfolioScreen() {
     <div className={styles.container}>
       <h1 className={styles.header}>Portfolio</h1>
       <Slider items={projects} currentCard={currentCard} setCurrentCard={setCurrentCard} />
-      {/* TODO add description component */}
-      {/* <h3>Current card: {currentCard}</h3> */}
+      <ProjectDetails
+        index={currentCard}
+        total={projects.length}
+        name={projects[currentCard].name}
+        description={projects[currentCard].description}
+        tags={projects[currentCard].tags}
+        link={projects[currentCard].link}
+        repo={projects[currentCard].repo}
+      />
     </div>
   )
 }

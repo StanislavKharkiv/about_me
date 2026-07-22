@@ -181,7 +181,7 @@ export default function Slider({ items, currentCard, setCurrentCard }: SliderPro
                   />
                 </div>
                 <Link
-                  href={`/portfolio/${project.id}`} // TODO: add this route
+                  href={"/portfolio"} // TODO: add this route
                   className={styles.cardButton}
                   aria-label={`Open source code of ${project.name}`}
                 >

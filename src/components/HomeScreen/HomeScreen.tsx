@@ -1,7 +1,6 @@
 "use client"
 
 import { useGSAP } from "@gsap/react"
-import clsx from "clsx"
 import gsap from "gsap"
 import { Folder, FolderOpen, Phone, PhoneOutgoing } from "lucide-react"
 import Link from "next/link"
@@ -50,6 +49,8 @@ export default function HomeScreen() {
     { coordPaths: "M 0 500 Q 600 320 850 580 T 1400 350", color: "#abd0e1" },
   ]
 
+  const btnIconsProps = { size: 18, strokeWidth: 1 }
+
   return (
     <div className={styles.pageContainer}>
       <Header />
@@ -71,15 +72,15 @@ export default function HomeScreen() {
             </svg>
           </h2>
           <div className={styles.btnWrap}>
-            <Link href={"/portfolio"} className={clsx(styles.btnLink)} aria-label={"Open portfolio"}>
+            <Link href={"/portfolio"} className={styles.btnLink} aria-label="Open portfolio">
               <span>VIEW PROJECTS</span>
-              <Folder className={styles.defaultIcon} size={18} strokeWidth={1} />
-              <FolderOpen className={styles.hoveredIcon} size={18} strokeWidth={1} />
+              <Folder className={styles.defaultIcon} {...btnIconsProps} />
+              <FolderOpen className={styles.hoveredIcon} {...btnIconsProps} />
             </Link>
-            <Link href={"/contacts"} className={styles.btnLink} aria-label={"Open contact form"}>
+            <Link href={"/contacts"} className={styles.btnLink} aria-label="Open contact form">
               <span>CONTACT ME</span>
-              <Phone className={styles.defaultIcon} size={18} strokeWidth={1} />
-              <PhoneOutgoing className={styles.hoveredIcon} size={18} strokeWidth={1} />
+              <Phone className={styles.defaultIcon} {...btnIconsProps} />
+              <PhoneOutgoing className={styles.hoveredIcon} {...btnIconsProps} />
             </Link>
           </div>
           <div className={styles.horizontalLine} />

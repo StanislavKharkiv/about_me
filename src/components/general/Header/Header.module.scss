@@ -1,3 +1,5 @@
+@use "@/styles/constants.scss" as *;
+
 .container {
   display: flex;
   align-items: center;
@@ -94,12 +96,16 @@
   color: #e2e8f0;
   transition: all 0.3s ease;
   user-select: none;
-}
 
-.statusBadge:hover {
-  border-color: rgb(8 122 179 / 50%);
-  box-shadow: 0 4px 10px rgb(34 129 197 / 15%);
-  transform: translateY(-1px);
+  &:hover {
+    border-color: rgb(8 122 179 / 50%);
+    box-shadow: 0 4px 10px rgb(34 129 197 / 15%);
+    transform: translateY(-1px);
+  }
+
+   @include respond(sm) {
+    display: none;
+  }
 }
 
 .pulseDot {

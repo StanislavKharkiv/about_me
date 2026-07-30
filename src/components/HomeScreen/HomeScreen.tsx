@@ -2,10 +2,13 @@
 
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
+import { Folder, FolderOpen, Phone, PhoneOutgoing } from "lucide-react"
+import Link from "next/link"
 import { useRef } from "react"
 
 import CodeRedactor from "../general/CodeRedactor"
 import CodeTyping from "../general/CodeTyping"
+import Header from "../general/Header"
 import NeonLights from "../general/NeonLights"
 
 import { codeLines } from "./constants"
@@ -46,29 +49,46 @@ export default function HomeScreen() {
     { coordPaths: "M 0 500 Q 600 320 850 580 T 1400 350", color: "#abd0e1" },
   ]
 
+  const btnIconsProps = { size: 18, strokeWidth: 1 }
+
   return (
-    <div className={styles.container}>
-      <NeonLights linesData={lines} />
-      <CodeRedactor className={styles.codeStyles}>
-        <CodeTyping codeLines={codeLines} />
-      </CodeRedactor>
-      <section className={styles.textBlock}>
-        <p className={styles.slogan}>Turning ideas into interactive web products.</p>
-        <h1 className={styles.mainHeader} ref={header}>
-          <span>Web</span> <span className={styles.verticalLine} /> <span>Development</span>
-        </h1>
-        <h2 className={styles.title}>
-          <svg>
-            <text x="50%" y="50%" textAnchor="middle" dominantBaseline="middle">
-              By Stanislav Iosyfov
-            </text>
-          </svg>
-        </h2>
-        <div className={styles.horizontalLine} />
-        <div className={styles.technologies} ref={technologies}>
-          {defaultTextTechnologies}
-        </div>
-      </section>
+    <div className={styles.pageContainer}>
+      <Header />
+      <div className={styles.container}>
+        <NeonLights linesData={lines} />
+        <CodeRedactor className={styles.codeStyles}>
+          <CodeTyping codeLines={codeLines} />
+        </CodeRedactor>
+        <section className={styles.textBlock}>
+          <p className={styles.slogan}>Turning ideas into interactive web products</p>
+          <h1 className={styles.mainHeader} ref={header}>
+            <span>BUILDING</span> <span>DIGITAL EXPERIENCES</span>
+          </h1>
+          <h2 className={styles.title}>
+            <svg>
+              <text x="0" y="50%" textAnchor="start" dominantBaseline="middle">
+                Software Engineer & Full Stack Developer
+              </text>
+            </svg>
+          </h2>
+          <div className={styles.btnWrap}>
+            <Link href={"/portfolio"} className={styles.btnLink} aria-label="Open portfolio">
+              <span>VIEW PROJECTS</span>
+              <Folder className={styles.defaultIcon} {...btnIconsProps} />
+              <FolderOpen className={styles.hoveredIcon} {...btnIconsProps} />
+            </Link>
+            <Link href={"/contacts"} className={styles.btnLink} aria-label="Open contact form">
+              <span>CONTACT ME</span>
+              <Phone className={styles.defaultIcon} {...btnIconsProps} />
+              <PhoneOutgoing className={styles.hoveredIcon} {...btnIconsProps} />
+            </Link>
+          </div>
+          <div className={styles.horizontalLine} />
+          <div className={styles.technologies} ref={technologies}>
+            {defaultTextTechnologies}
+          </div>
+        </section>
+      </div>
     </div>
   )
 }

@@ -3,6 +3,7 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { TextPlugin } from "gsap/TextPlugin"
+import { Download } from "lucide-react"
 import Image from "next/image"
 import { useRef, useMemo } from "react"
 
@@ -79,8 +80,18 @@ export default function AboutScreen() {
             HTML, CSS, JavaScript, TypeScript, Node.js, Python, PHP, SQL, Docker, Git, CI/CD, Agile, etc.
           </p>
         </div>
-
-        <Accordion items={accordionItems} className={styles.accordion} />
+        <section className={styles.cvWrapper}>
+          <Accordion items={accordionItems} />
+          <a
+            className={styles.cvLink}
+            href="/docs/SI_CV.pdf"
+            download="Stanislav_Iosyfov_CV.pdf"
+            aria-label="Download Stanislav Iosyfov's Resume PDF"
+          >
+            <Download className={styles.cvIcon} size={16} />
+            <span>Download CV</span>
+          </a>
+        </section>
       </section>
     </div>
   )

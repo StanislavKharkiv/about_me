@@ -3,12 +3,14 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { TextPlugin } from "gsap/TextPlugin"
-import { Download } from "lucide-react"
+import { FileDown, FolderDown } from "lucide-react"
 import Image from "next/image"
 import { useRef, useMemo } from "react"
 
 import Accordion from "@/components/general/Accordion"
 import NeonLights from "@/components/general/NeonLights"
+
+import Button from "../general/Button"
 
 import styles from "./AboutScreen.module.scss"
 import { lines, history, summary } from "./constants"
@@ -82,15 +84,18 @@ export default function AboutScreen() {
         </div>
         <section className={styles.cvWrapper}>
           <Accordion items={accordionItems} />
-          <a
+          <Button
             className={styles.cvLink}
             href="/docs/SI_CV.pdf"
             download="Stanislav_Iosyfov_CV.pdf"
             aria-label="Download Stanislav Iosyfov's Resume PDF"
+            as="a"
+            icon={FileDown}
+            hoverIcon={FolderDown}
+            iconPosition="left"
           >
-            <Download className={styles.cvIcon} size={16} />
-            <span>Download CV</span>
-          </a>
+            Download CV
+          </Button>
         </section>
       </section>
     </div>

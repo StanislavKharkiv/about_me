@@ -80,34 +80,18 @@
 .actionLinks {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
   margin-top: 30px;
 
   .btnLink {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 0.4rem 0.8rem;
-    font-size: 1rem;
-    letter-spacing: 0.08em;
-    color: rgb(255 255 255 / 85%);
-    background: rgb(255 255 255 / 3%);
-    border: 1px solid rgb(255 255 255 / 30%);
-    border-radius: 4px;
-    text-decoration: none;
-    transition: all 0.25 ease;
+    padding: 5px 10px;
 
     .arrow {
-      font-size: 1rem;
+      font-size: 1.2em;
       transition: transform 0.2s ease;
     }
 
     &:hover {
-      color: var(--accent);
-      background: rgb(255 255 255 / 90%);
-      border-color: var(--accent);
-      box-shadow: 0 0 10px rgb(255 255 255 / 15%);
-
       .arrow {
         transform: translate(2px, -2px);
       }

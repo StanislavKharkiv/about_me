@@ -23,7 +23,7 @@ test("HTML code typing", async () => {
   expect(contactsLink).toBeInTheDocument()
   expect(contactsLink).toHaveAttribute("href", "/contacts")
 
-  const worksLink = screen.getByRole("link", { name: /works/i })
-  expect(worksLink).toBeInTheDocument()
-  expect(worksLink).toHaveAttribute("href", "/works")
+  const portfolioLink = screen.getByRole("link", { name: /portfolio/i })
+  expect(portfolioLink).toBeInTheDocument()
+  expect(portfolioLink).toHaveAttribute("href", "/portfolio")
 })

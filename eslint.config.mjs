@@ -52,6 +52,7 @@ const eslintConfig = [
         { blankLine: "always", prev: "*", next: "export" },
         { blankLine: "always", prev: ["const", "let", "var"], next: "export" },
       ],
+      "@typescript-eslint/no-unused-vars": ["error", { varsIgnorePattern: "^_$" }],
     },
   }),
 ]

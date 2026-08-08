@@ -5,8 +5,9 @@ import { gsap } from "gsap"
 import { Observer } from "gsap/Observer"
 import { ArrowBigRight, ArrowBigLeft } from "lucide-react"
 import Image from "next/image"
-import Link from "next/link"
 import React, { useRef } from "react"
+
+// import Button from "../Button"
 
 import {
   CARD_SPACING,
@@ -180,13 +181,13 @@ export default function Slider({ items, currentCard, setCurrentCard }: SliderPro
                     priority={i === Math.floor(items.length / 2)}
                   />
                 </div>
-                <Link
+                {/* <Button
                   href={"/portfolio"} // TODO: add this route
-                  className={styles.cardButton}
                   aria-label={`Open source code of ${project.name}`}
+                  as="link"
                 >
                   EXPLORE CASE
-                </Link>
+                </Button> */}
                 <div className={styles.cardFooter}>
                   {project.link && (
                     <a

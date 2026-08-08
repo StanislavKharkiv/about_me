@@ -4,6 +4,8 @@ import { useGSAP } from "@gsap/react"
 import { gsap } from "gsap"
 import React, { useRef } from "react"
 
+import Button from "../Button"
+
 import styles from "./ProjectDetails.module.scss"
 
 export interface ProjectDetailsProps {
@@ -177,17 +179,17 @@ export default function ProjectDetails({ index, total, name, description, tags, 
           {(link || repo) && (
             <div ref={linksRef} className={styles.actionLinks}>
               {link && (
-                <a href={link} target="_blank" rel="noopener noreferrer" className={styles.btnLink}>
+                <Button as="a" href={link} target="_blank" rel="noopener noreferrer" className={styles.btnLink}>
                   <span>LIVE DEMO</span>
                   <span className={styles.arrow}>↗</span>
-                </a>
+                </Button>
               )}
 
               {repo && (
-                <a href={repo} target="_blank" rel="noopener noreferrer" className={styles.btnLink}>
+                <Button as="a" href={repo} target="_blank" rel="noopener noreferrer" className={styles.btnLink}>
                   <span>SOURCE CODE</span>
                   <span className={styles.arrow}>↗</span>
-                </a>
+                </Button>
               )}
             </div>
           )}

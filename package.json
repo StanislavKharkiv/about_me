@@ -11,6 +11,8 @@
     "lint:scss:fix": "stylelint 'src/**/*.{scss,css}' --fix",
     "lint": "next lint && npm run lint:scss",
     "lint:fix": "next lint --fix && npm run lint:scss:fix",
+    "typecheck": "tsc --noEmit",
+    "check": "npm run lint && npm run typecheck",
     "format": "prettier --check .",
     "format:fix": "prettier --write .",
     "el": "eslint",
@@ -67,7 +69,7 @@
     "typescript": "^5",
     "typescript-eslint": "^8.33.1"
   },
-    "overrides": {
+  "overrides": {
     "postcss": "^8.5.10"
   },
   "lint-staged": {

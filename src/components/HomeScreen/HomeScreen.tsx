@@ -3,9 +3,9 @@
 import { useGSAP } from "@gsap/react"
 import gsap from "gsap"
 import { Folder, FolderOpen, Phone, PhoneOutgoing } from "lucide-react"
-import Link from "next/link"
 import { useRef } from "react"
 
+import Button from "../general/Button"
 import CodeRedactor from "../general/CodeRedactor"
 import CodeTyping from "../general/CodeTyping"
 import Header from "../general/Header"
@@ -49,8 +49,6 @@ export default function HomeScreen() {
     { coordPaths: "M 0 500 Q 600 320 850 580 T 1400 350", color: "#abd0e1" },
   ]
 
-  const btnIconsProps = { size: 18, strokeWidth: 1 }
-
   return (
     <div className={styles.pageContainer}>
       <Header />
@@ -72,16 +70,12 @@ export default function HomeScreen() {
             </svg>
           </h2>
           <div className={styles.btnWrap}>
-            <Link href={"/portfolio"} className={styles.btnLink} aria-label="Open portfolio">
+            <Button as="link" href={"/portfolio"} icon={Folder} hoverIcon={FolderOpen} aria-label="Open portfolio">
               <span>VIEW PROJECTS</span>
-              <Folder className={styles.defaultIcon} {...btnIconsProps} />
-              <FolderOpen className={styles.hoveredIcon} {...btnIconsProps} />
-            </Link>
-            <Link href={"/contacts"} className={styles.btnLink} aria-label="Open contact form">
+            </Button>
+            <Button as="link" href={"/contacts"} icon={Phone} hoverIcon={PhoneOutgoing} aria-label="Open contact form">
               <span>CONTACT ME</span>
-              <Phone className={styles.defaultIcon} {...btnIconsProps} />
-              <PhoneOutgoing className={styles.hoveredIcon} {...btnIconsProps} />
-            </Link>
+            </Button>
           </div>
           <div className={styles.horizontalLine} />
           <div className={styles.technologies} ref={technologies}>

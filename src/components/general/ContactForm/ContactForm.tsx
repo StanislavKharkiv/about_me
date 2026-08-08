@@ -6,6 +6,8 @@ import gsap from "gsap"
 import { Send } from "lucide-react"
 import { useState, useRef } from "react"
 
+import Button from "../Button"
+
 import styles from "./ContactForm.module.scss"
 
 export default function ContactScreen({ className = "" }: { className?: string }) {
@@ -143,15 +145,15 @@ export default function ContactScreen({ className = "" }: { className?: string }
             <div className={styles.bar}></div>
           </div>
 
-          <button
+          <Button
             type="submit"
             data-testid="submit-button"
             disabled={status === "loading"}
             className={styles.submitBtn}
+            icon={Send}
           >
             <span className={styles.btnText}>{status === "loading" ? "TRANSMITTING..." : "SEND PACKET"}</span>
-            <Send strokeWidth={1.2} size={14} />
-          </button>
+          </Button>
 
           {status === "success" && (
             <p className={`${styles.systemMessage} ${styles.success}`} data-testid="success-message">

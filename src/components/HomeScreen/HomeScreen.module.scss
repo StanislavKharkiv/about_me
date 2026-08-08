@@ -142,58 +142,12 @@ $header-text-shadow:
   animation: show 8s;
 }
 
-$btn-gap: 14px;
-
 .btnWrap {
   display: flex;
   justify-content: center;
-  gap: $btn-gap;
+  gap: 14px;
   margin-top: 2rem;
   animation: show 5s;
-}
-
-.btnLink {
-  display: flex;
-  align-items: center;
-  gap: $btn-gap;
-  padding: 10px $btn-gap;
-  border-radius: 6px;
-  background-color: rgb(9 71 102 / 40%);
-  border: 1px solid var(--white);
-  color: var(--white);
-  font-size: 1rem;
-  font-weight: lighter;
-  letter-spacing: 0.1em;
-  text-decoration: none;
-  cursor: pointer;
-  transition:
-    background-color,
-    box-shadow,
-    color 0.3s ease;
-
-  & .hoveredIcon {
-    display: none;
-  }
-
-  &:hover {
-    color: var(--accent);
-    background-color: rgb(255 255 255 / 80%);
-    box-shadow:
-      0 0 6px var(--accent),
-      inset 0 0 2px rgb(255 255 255 / 50%);
-
-    & .hoveredIcon {
-      display: inline-block;
-    }
-
-    & .defaultIcon {
-      display: none;
-    }
-  }
-
-  &:active {
-    transform: scale(0.96);
-  }
 }
 
 .technologies {

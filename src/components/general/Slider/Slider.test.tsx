@@ -67,8 +67,16 @@ jest.mock("@gsap/react", () => ({
 // 5. Mock next/image to render a standard <img> tag
 jest.mock("next/image", () => ({
   __esModule: true,
-  default: (props: React.ImgHTMLAttributes<HTMLImageElement> & { fill?: boolean; priority?: boolean }) => {
-    const { ...rest } = props
+  default: (
+    props: React.ImgHTMLAttributes<HTMLImageElement> & {
+      fill?: boolean
+      priority?: boolean
+      fetchPriority?: string
+    },
+  ) => {
+    // remove fill and priority props from the mock
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    const { fill, priority, fetchPriority, ...rest } = props
     // eslint-disable-next-line @next/next/no-img-element
     return <img {...rest} alt={props.alt || ""} />
   },
